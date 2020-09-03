@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		32082CBD27F527233F4BDDA0 /* Pods_DigitalOcean_serst.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCF580EF0F9B9F53B4A3292 /* Pods_DigitalOcean_serst.framework */; };
 		F23B5D8924EDA11100982F20 /* DropletInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B5D8824EDA11100982F20 /* DropletInfoTableViewController.swift */; };
-		F23D928C24F05EC000CA31E7 /* CachedDroplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23D928B24F05EC000CA31E7 /* CachedDroplet.swift */; };
 		F267074624EC600600E6EAF4 /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267074524EC600600E6EAF4 /* ServerViewController.swift */; };
+		F2699E2D24F843C70002D4A6 /* CachedDroplet+CoreDataClass.swift 20-02-21-590.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2699E2C24F843C70002D4A6 /* CachedDroplet+CoreDataClass.swift 20-02-21-590.swift */; };
 		F275042624E87FAF0068EE61 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275042524E87FAF0068EE61 /* ServerManager.swift */; };
 		F275042824E880150068EE61 /* Droplets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275042724E880150068EE61 /* Droplets.swift */; };
+		F2A38A7C24FD7F280034B2C4 /* PrometheusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A38A7B24FD7F280034B2C4 /* PrometheusManager.swift */; };
+		F2A38A7E24FD7F7B0034B2C4 /* PrometheusManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A38A7D24FD7F7B0034B2C4 /* PrometheusManagerDelegate.swift */; };
+		F2A38A8024FD81F10034B2C4 /* PrometheusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A38A7F24FD81F10034B2C4 /* PrometheusResponse.swift */; };
 		F2AE946124E5CD54005A4788 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE946024E5CD54005A4788 /* AccountManager.swift */; };
 		F2AE946324E5D951005A4788 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AE946224E5D951005A4788 /* K.swift */; };
 		F2B299DC24E5BE5D0094CC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B299DB24E5BE5D0094CC1B /* AppDelegate.swift */; };
@@ -34,10 +37,14 @@
 		8024B5C042C7A20D5733DA17 /* Pods-DigitalOcean-serst.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalOcean-serst.release.xcconfig"; path = "Target Support Files/Pods-DigitalOcean-serst/Pods-DigitalOcean-serst.release.xcconfig"; sourceTree = "<group>"; };
 		8B0D0DF99F1E44B068D31CBF /* Pods-DigitalOcean-serst.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalOcean-serst.debug.xcconfig"; path = "Target Support Files/Pods-DigitalOcean-serst/Pods-DigitalOcean-serst.debug.xcconfig"; sourceTree = "<group>"; };
 		F23B5D8824EDA11100982F20 /* DropletInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropletInfoTableViewController.swift; sourceTree = "<group>"; };
-		F23D928B24F05EC000CA31E7 /* CachedDroplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDroplet.swift; sourceTree = "<group>"; };
+		F23D928F24F18BC900CA31E7 /* DigitalOcean_serst v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DigitalOcean_serst v2.xcdatamodel"; sourceTree = "<group>"; };
 		F267074524EC600600E6EAF4 /* ServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
+		F2699E2C24F843C70002D4A6 /* CachedDroplet+CoreDataClass.swift 20-02-21-590.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CachedDroplet+CoreDataClass.swift 20-02-21-590.swift"; sourceTree = "<group>"; };
 		F275042524E87FAF0068EE61 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		F275042724E880150068EE61 /* Droplets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Droplets.swift; sourceTree = "<group>"; };
+		F2A38A7B24FD7F280034B2C4 /* PrometheusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrometheusManager.swift; sourceTree = "<group>"; };
+		F2A38A7D24FD7F7B0034B2C4 /* PrometheusManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrometheusManagerDelegate.swift; sourceTree = "<group>"; };
+		F2A38A7F24FD81F10034B2C4 /* PrometheusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrometheusResponse.swift; sourceTree = "<group>"; };
 		F2AE946024E5CD54005A4788 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		F2AE946224E5D951005A4788 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F2B299D824E5BE5D0094CC1B /* DigitalOcean-serst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigitalOcean-serst.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +143,7 @@
 				F2AE946024E5CD54005A4788 /* AccountManager.swift */,
 				F2AE946224E5D951005A4788 /* K.swift */,
 				F275042524E87FAF0068EE61 /* ServerManager.swift */,
+				F2A38A7B24FD7F280034B2C4 /* PrometheusManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,8 +172,8 @@
 		F2B299FE24E5C1160094CC1B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F2699E2C24F843C70002D4A6 /* CachedDroplet+CoreDataClass.swift 20-02-21-590.swift */,
 				F2B299FF24E5C1290094CC1B /* Account+CoreDataClass.swift */,
-				F23D928B24F05EC000CA31E7 /* CachedDroplet.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				F2E2B33524E9C57400C00A79 /* ServerManagerDelegate.swift */,
+				F2A38A7D24FD7F7B0034B2C4 /* PrometheusManagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F275042724E880150068EE61 /* Droplets.swift */,
+				F2A38A7F24FD81F10034B2C4 /* PrometheusResponse.swift */,
 			);
 			path = ValueObjects;
 			sourceTree = "<group>";
@@ -308,14 +318,17 @@
 				F2B29A0124E5C1290094CC1B /* Account+CoreDataClass.swift in Sources */,
 				F2AE946324E5D951005A4788 /* K.swift in Sources */,
 				F2B299DC24E5BE5D0094CC1B /* AppDelegate.swift in Sources */,
+				F2A38A8024FD81F10034B2C4 /* PrometheusResponse.swift in Sources */,
 				F2B29A0424E5C5460094CC1B /* AccountsViewController.swift in Sources */,
 				F2B299DE24E5BE5D0094CC1B /* SceneDelegate.swift in Sources */,
 				F2B299E624E5BE5D0094CC1B /* DigitalOcean_serst.xcdatamodeld in Sources */,
+				F2A38A7C24FD7F280034B2C4 /* PrometheusManager.swift in Sources */,
 				F2AE946124E5CD54005A4788 /* AccountManager.swift in Sources */,
 				F275042624E87FAF0068EE61 /* ServerManager.swift in Sources */,
-				F23D928C24F05EC000CA31E7 /* CachedDroplet.swift in Sources */,
 				F2D62F2C24EB04710045CE45 /* DropletTableViewCell.swift in Sources */,
+				F2699E2D24F843C70002D4A6 /* CachedDroplet+CoreDataClass.swift 20-02-21-590.swift in Sources */,
 				F267074624EC600600E6EAF4 /* ServerViewController.swift in Sources */,
+				F2A38A7E24FD7F7B0034B2C4 /* PrometheusManagerDelegate.swift in Sources */,
 				F2DF9D4A24E5E232006FC879 /* ServersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,9 +536,10 @@
 		F2B299E424E5BE5D0094CC1B /* DigitalOcean_serst.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F23D928F24F18BC900CA31E7 /* DigitalOcean_serst v2.xcdatamodel */,
 				F2B299E524E5BE5D0094CC1B /* DigitalOcean_serst.xcdatamodel */,
 			);
-			currentVersion = F2B299E524E5BE5D0094CC1B /* DigitalOcean_serst.xcdatamodel */;
+			currentVersion = F23D928F24F18BC900CA31E7 /* DigitalOcean_serst v2.xcdatamodel */;
 			path = DigitalOcean_serst.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -161,7 +161,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ALo-ys-Svg"/>
                     </view>
-                    <navigationItem key="navigationItem" title="DropletName" id="7WR-cc-QQK"/>
+                    <navigationItem key="navigationItem" title="DropletName" id="7WR-cc-QQK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="OZQ-IW-ebo">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="FzK-Sd-rtB" id="JbS-eu-kHg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="cpuChart" destination="Seq-Md-MHl" id="xmc-yn-kvy"/>

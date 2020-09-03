@@ -88,7 +88,8 @@ class ServersViewController: UIViewController {
         let serverViewController = segue.destination as! ServerViewController
         
         if let index = dropletsTableView.indexPathForSelectedRow?.row {
-                serverViewController.droplet = droplets[index]
+            serverViewController.droplet = droplets[index]
+            serverViewController.cachedDropletInfo = account?.getCachedDroplet(droplet: droplets[index])
         }
     }
 
@@ -103,6 +104,8 @@ extension ServersViewController: ServerManagerDelegate {
             self.dropletsTableView.hideLoading()
             self.dropletsTableView.reloadData()
         }
+        
+        account?.setCachedDroplets(droplets: self.droplets)
     }
 }
 

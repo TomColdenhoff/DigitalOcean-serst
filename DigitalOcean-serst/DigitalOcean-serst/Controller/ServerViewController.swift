@@ -12,6 +12,9 @@ import Charts
 class ServerViewController: UIViewController {
 
     var droplet: Droplet?
+    var cachedDropletInfo: CachedDroplet?
+    
+    var prometheusManager: PrometheusManager?
     @IBOutlet weak var cpuChart: LineChartView!
     
     override func viewDidLoad() {
@@ -24,7 +27,61 @@ class ServerViewController: UIViewController {
         }
         
         navigationItem.title = safeDroplet.name
-        updateCpuChart()
+        
+        if cachedDropletInfo?.prometheusApiUrl != nil {
+            SetPrometheusManager(apiUrl: cachedDropletInfo!.prometheusApiUrl!)
+            updateCharts()
+        } else {
+            presentAddPrometheusUrlAlert()
+        }
+    }
+    
+    private func presentAddPrometheusUrlAlert() {
+        var urlTextField = UITextField()
+        let alertController = UIAlertController(title: "Add Prometheus Api Url", message: "Add a prometheus api url", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "url"
+            urlTextField = textField
+        }
+        let alertAddAction = UIAlertAction(title: "Add", style: .default) { (alertAction) in
+            if let url = urlTextField.text {
+                self.cachedDropletInfo?.setPrometheusApiUrl(url)
+                self.SetPrometheusManager(apiUrl: self.cachedDropletInfo!.prometheusApiUrl!)
+                self.updateCharts()
+            }
+        }
+        alertController.addAction(alertAddAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
+        presentUpdatePrometheusUrlAlert()
+    }
+    
+    private func presentUpdatePrometheusUrlAlert() {
+        var urlTextField = UITextField()
+        let alertController = UIAlertController(title: "Update Prometheus Api Url", message: "Update the prometheus api url for this droplet.", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = self.cachedDropletInfo?.prometheusApiUrl
+            urlTextField = textField
+        }
+        let alertUpdateAction = UIAlertAction(title: "Update", style: .default) { (updateAction) in
+            if let url = urlTextField.text {
+                self.cachedDropletInfo?.setPrometheusApiUrl(url)
+                self.SetPrometheusManager(apiUrl: self.cachedDropletInfo!.prometheusApiUrl!)
+                self.updateCharts()
+            }
+        }
+        let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(alertUpdateAction)
+        alertController.addAction(alertCancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func SetPrometheusManager(apiUrl: String) {
+        prometheusManager = PrometheusManager(apiUrl: apiUrl)
+        prometheusManager?.delegate = self
     }
     
     // MARK: - Navigation
@@ -39,6 +96,10 @@ class ServerViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         preferredContentSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    }
+    
+    private func updateCharts() {
+        prometheusManager?.LoadAllQueries()
     }
     
     private func updateCpuChart() {
@@ -56,4 +117,8 @@ class ServerViewController: UIViewController {
         
         cpuChart.notifyDataSetChanged()
     }
+}
+
+extension ServerViewController: PrometheusManagerDelegate {
+    
 }
